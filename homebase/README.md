@@ -1,93 +1,58 @@
-# HomeBase — Plateforme personnelle IA sous Laragon
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Projet Laravel complet avec chatbot Mistral AI, gestion de tâches/projets, notes intelligentes,
-tableau de bord et système d'administration. Hébergé en local sous Laragon/Windows.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
----
+## About Laravel
 
-## Prérequis
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- Laragon Full (https://laragon.org) → PHP 8.2+, MySQL 8, Nginx/Apache
-- Node.js 18+ (pour npm/Vite)
-- Composer (inclus dans Laragon)
-- Clé API Mistral gratuite → https://console.mistral.ai
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
----
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Installation en 15 étapes
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+
+## Agentic Development
+
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
 
 ```bash
-# 1. Ouvrir le terminal Laragon (clic droit > Terminal)
-cd C:/laragon/www
+composer require laravel/boost --dev
 
-# 2. Créer le projet Laravel
-composer create-project laravel/laravel homebase
-
-cd homebase
-
-# 3. Installer les dépendances PHP
-composer require laravel/sanctum          # Auth API tokens
-composer require spatie/laravel-permission # Gestion des rôles
-composer require guzzlehttp/guzzle        # Client HTTP pour Mistral
-
-# 4. Installer les dépendances JS
-npm install
-npm install axios @tailwindcss/forms @tailwindcss/typography
-
-# 5. Configurer TailwindCSS
-npx tailwindcss init -p
-
-# 6. Copier le fichier .env
-cp .env.example .env
-php artisan key:generate
-
-# 7. Configurer .env (voir section Configuration)
-
-# 8. Créer la base de données dans HeidiSQL ou phpMyAdmin
-#    Nom : homebase_db
-
-# 9. Lancer les migrations
-php artisan migrate
-
-# 10. Seeder initial (admin + données de démo)
-php artisan db:seed
-
-# 11. Publier Sanctum
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-
-# 12. Publier les permissions Spatie
-php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
-php artisan migrate
-
-# 13. Compiler les assets
-npm run dev     # développement avec hot-reload
-# OU
-npm run build   # production
-
-# 14. Vider les caches
-php artisan optimize:clear
-
-# 15. Accéder au site
-# http://homebase.test (si Laragon est configuré en virtual host)
-# OU http://localhost/homebase/public
+php artisan boost:install
 ```
 
----
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
-## Configuration Laragon (Virtual Host)
+## Contributing
 
-Dans Laragon → Menu → Apache/Nginx → Virtual Hosts → ajouter :
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-```
-homebase.test → C:/laragon/www/homebase/public
-```
+## Code of Conduct
 
-Redémarrer Laragon. Le site est accessible sur http://homebase.test
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
----
+## Security Vulnerabilities
 
-## Accès par défaut (après seeder)
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-- Admin : admin@homebase.local / password
-- User  : user@homebase.local / password
+## License
 
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
