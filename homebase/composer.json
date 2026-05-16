@@ -1,0 +1,10 @@
+{
+    "require": {
+        "laravel/sanctum": "^4.3",
+        "guzzlehttp/guzzle": "^7.10",
+        "spatie/laravel-permission": "^7.4"
+    },
+    "require-dev": {
+        "laravel/breeze": "^2.4"
+    }
+}
