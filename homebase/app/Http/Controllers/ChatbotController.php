@@ -108,7 +108,7 @@ class ChatbotController extends Controller
                 'session' => [
                     'id' => $session->id,
                     'title' => $session->fresh()->title,
-                    'total_tokens' => $session->total_tokens + $aiResponse['tokens'],
+                    'total_tokens' => $session->fresh()->total_tokens,
                 ],
             ]);
 
